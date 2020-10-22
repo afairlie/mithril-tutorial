@@ -8,7 +8,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    open: true,
+    open: 'Firefox',
     compress: true,
     port: 9000,
     publicPath: '/',
