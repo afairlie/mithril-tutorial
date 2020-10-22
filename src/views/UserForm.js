@@ -6,12 +6,25 @@ module.exports = {
     User.load(vnode.attrs.id)
   },
   view: function() {
-    return m("form", [
+    return m("form", {
+      onsubmit: function(e){
+        e.preventDefault()
+        User.save()
+      }
+    },
+    [
       m("label.label", "First name"),
-      m(`input.input[type=text][placeholder=${User.current.firstName}]`),
+      // controlled input
+      m(`input.input[type=text][placeholder=${User.current.firstName}]`, {
+        oninput: function(e) { User.current.firstName = e.target.value },
+        value: User.current.firstName
+      }),
       m("label.label", "Last name"),
-      m(`input.input[placeholder=${User.current.lastName}]`),
-      m("button.button[type=button]", "Save"),
+      m(`input.input[placeholder=${User.current.lastName}]`, {
+        oninput: function(e) { User.current.lastName = e.target.value },
+        value: User.current.lastName
+      }),
+      m("button.button[type=submit]", "Save"),
     ])
   }
 }
