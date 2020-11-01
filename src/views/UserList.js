@@ -1,7 +1,7 @@
-let m = require('mithril')
-let User = require("../models/User")
+import m from 'mithril'
+import {User} from "../models/User"
 
-module.exports = {
+export default {
   oninit: User.loadList,
   view: function() {
     return m('.user-list', User.list.map(user => {

@@ -1,6 +1,6 @@
-let m = require("mithril")
+import m from 'mithril'
 
-let User = {
+export const User = {
   list: [],
   loadList: function() {
     // make XHR call
@@ -31,9 +31,7 @@ let User = {
       method: "PUT",
       url: `https://rem-rest-api.herokuapp.com/api/users/${User.current.id}`,
       body: User.current,
-      withCredentials: true,
+      withCredentials: true
     })
   }
 }
-
-module.exports = User

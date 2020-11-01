@@ -1,8 +1,8 @@
-let m = require("mithril")
+import m from 'mithril'
 
-let UserList = require("./views/UserList")
-let UserForm = require("./views/UserForm")
-let Layout = require("./views/Layout")
+import UserList from "./views/UserList"
+import UserForm from "./views/UserForm"
+import Layout from "./views/Layout"
 
 import './style.css'
 

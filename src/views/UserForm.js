@@ -1,15 +1,19 @@
-let m = require('mithril')
-const User = require('../models/User')
+import m from 'mithril'
+import {User} from '../models/User'
 
-module.exports = {
+export default {
   oninit: function(vnode) {
     User.load(vnode.attrs.id)
   },
   view: function() {
+    console.log('UserForm')
     return m("form", {
       onsubmit: function(e){
         e.preventDefault()
         User.save()
+        .then(function(res){
+          m.route.set('/list')
+        })   
       }
     },
     [
