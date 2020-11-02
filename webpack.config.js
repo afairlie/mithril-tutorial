@@ -1,4 +1,7 @@
 const path = require('path');
+
+// have to install plugins and loaders ex: html plugin, or babel loader
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -12,8 +15,6 @@ module.exports = {
     open: 'Firefox',
     compress: true,
     port: 9000,
-    publicPath: '/',
-    contentBase: './dist/',
     stats: 'minimal'
   },
   plugins: [
